@@ -13,10 +13,21 @@ public class UseDinnerParty {
         myParty.DisplayInvitation();
 
         DinnerParty myDinnerParty = new DinnerParty();
+        String choice;
         System.out.println("enter guest number for dinner party:");
         int newGuestNum = sc.nextInt();
         myDinnerParty.setGuests(newGuestNum);
-        System.out.println("enter 1 for spaghetti and 2 for burgers");
+        System.out.println("enter 1 for spaghetti or 2 for burgers");
         int theDinner = sc.nextInt();
+        myDinnerParty.setDinnerChoice(theDinner);
+        if (myDinnerParty.getDinnerChoice() == 1){
+            choice = "Spaghetti";
+        }
+        else {choice = "burgers";}
+        JOptionPane.showMessageDialog(null,
+                myDinnerParty.getGuests() +" "+"guests! \n"+
+                        "we will be eating "+choice);
+        myDinnerParty.DisplayInvitation();
     }
 }
+
